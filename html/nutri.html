@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+  
+  <nav class="main-header navbar navbar-expand  bg-warning  fixed-top">
+    <div class=" container-fluid text-white  ">
+      <ul class="navbar-nav ml-auto mb-4">   
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="acc.html" class="nav-link ">Accueil</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="nutri.html" class="nav-link btn btn-outline-light">Nutrition</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="sport.html" class="nav-link ">Sport</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="Conseils.html" class="nav-link ">Conseils pratique</a>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+  <div class="main-head bg-light fixed-top">
+    <input type="text" value="rechercher" class="col-md-4 input">
+    <button id="search" >search</button>
+  </div>
+  <main class="content-wrapper ">
+  <div class=" row container-fluid  ">
+    <div class="col-md-8 ">
+            <section class="content">
+              <div class="container-fluid">
+                <section class="gallery-block cards-gallery">
+                  <div class="container">
+                    <div class="heading">
+                      <h4 class="text-center mt-5">Bienfaits des certaines aliments</h4>
+                    </div>
+                    <div class="row">
+                      <div >
+                        <button class="btn btn-light">Les légumes e fruits</button>
+                          <div class="card-body">
+                            <p class="text-muted card-text"> Ils apportent des minéreaux, des vitamines, des fibres et des nombreux antioxydants très bénéfiques pour notre santé.
+                                Ces substances font regulièrement la preuve de leur intérêt dans la prevention des cancers et du vieillissement prématuré et 
+                                pour protéger de l'oxydant du soleil et de la lumière, des attaques de bactéries des parasites.</p>
+                          </div>
+                      </div>
+                      <div>
+                        <button class="btn btn-light">Les charcuteries</button>
+                        <div class="card-body">
+                          <p class="text-muted card-text"> 
+                           Elles contiennent également des vitamines et des minéraux. Les charcuteries sont une des principales sources de vitamine B1 et B2. Cependant, la charcuterie contient une quantité non négligeable de sodium, sous forme de sel utilisé comme agent de conservation.
+                          </p>
+                        </div>
+                      </div>
+                    </div>  
+                    <div class="heading ">
+                        <h4 class="text-center mt-2">Bienfaits des légumes et fruits selon leur couleurs</h4>
+                    </div>
+                    <div class=" mt-3 ">
+                        <h5 class="card-title text-warning">
+                            Orange, jaune:stimulation du système immunitaire
+                        </h5>
+                        <p class="text-muted">Les fruits et légumes de couleurs jaune et orangée ont aussi l'avantage d'être très riches en caroténoides et en pro-vitamine. 
+                            Ils sont très riche en vitamine A.</p>
+                        <small> <cite title="Source Title"></cite></small>
+                    </div>
+                    <div class=" mt-3 ">
+                        <h5 class="card-title text-danger">
+                            Rouge: santé cardiovasculaire et santé de l'oeil
+                        </h5>
+                        <p class="text-muted">Les fruits et légumes de couleurs rouge renferment du lycopène, un caroténoide.
+                            Les fruits et légumes de couleurs rouge renferment du lycopène, un caroténoide</p>
+                        <small> <cite title="Source Title"></cite></small>
+                    </div>
+                    <div class=" mt-3 ">
+                        <h5 class="card-title" style="color: violet;">
+                            Violet, bleu: protection des cellules contre le vieillissement
+                        </h5>
+                        <p class="text-muted">Les fruits et légumes violet contiennent des composés phénoliques comme les anthocyanes, des antioxydants qui luttent contre le vieillissement cellulaire.
+                           </p>
+                        <small> <cite title="Source Title"></cite></small>
+                    </div>
+                    <div class=" mt-3 ">
+                        <h5 class="card-title text-success">
+                            Verts : santé cardiovasculaire et santé de l'oeil
+                        </h5>
+                        <p class="text-muted"> Ils sont particulièrement riches en fer et vitamine B9.
+                            Les légumes à feuilles vertes foncées sont très forte en concentration dans la rétine de l'oeil et elles participent à la santé physiologie de l'oeil, notamment en nous protégeant de la lumière bleue(lumière des ecrans). 
+                           </p>
+                        <small> <cite title="Source Title"></cite></small>
+                    </div>
+                </section>
+              </div>    
+            </section>
+    </div>
+    <div class="col-md-3 mt-2">
+      <div id="app" >
+        <h5 class="text-center mt-5 mb-4">Envoyer un commentaire</h5>
+        <form id="app" @submit="checkForm" action="sport.html"  method="post"  novalidate="true">
+        <div v-if="errors.length">
+        <ul class="d-none d-sm-inline-block ">
+         <li v-for="error in errors" class="text-danger">{{ error }}</li>
+        </ul>
+        </div>
+        <div class="form-group">
+        <label for="name">Pseudo</label>
+         <input id="name" class="form-control" v-model="name" type="text" name="name" >
+        </div>
+        <div class="form-group">
+          <label for="email" class="label-control">Adresse email</label>
+          <input class="form-control" id="email" v-model="email" type="email" name="email" >
+        </p class="form-group">
+        <div class="form-group">
+          <label for="comments">Commentaire</label>
+          <textarea name="comments" v-models="comments" id="comments" cols="40" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" class="btn btn-warning">
+        </div>
+        <div> Pour plus d'information ou si vous avez besoin d'aide n'hesitez pas à abonner pour récevoir d'autre article.</div>
+        <button class="btn btn-outline-danger mt-3" v-on:click="counter += 1"><img src="../image/instagram-3814047_960_720.png" class="mr-3" width="12%"  id="img" >Abonné</button>
+        <div class="text-center">
+          <span v-if="counter == 0" class="text-lg-2 text-muted">Aucun abonné</span>
+          <span v-if="counter == 1 " class="text-lg-2 text-muted">Une personne est abonnée</span>
+          <span v-if="counter >1 " class="text-lg-2 text-muted">{{counter}} personnes sont abonnées</span>
+        </div>
+        <div class="mt-5">
+            <h5 class="text-center">Suivez nous sur: </h5>
+            <span><a href="#"><img src="../image/pint.jpg" style="border-radius: 80%;"></a></span>
+            <span><a href="#"></a><img src="../image/in.jpg" style="border-radius: 80%;"></a></span>
+            <span><a href="#"><img src="../image/Copie de téléchargement.jpg" style="border-radius: 80%;"></a></span>
+            <span><a href="#"><img src="../image/youtube.jpg" style="border-radius: 80%;"></a></span>
+        </div>
+    </div> 
+  </div>  
+  <script>
+  const app = new Vue({
+      el: '#app',
+    data: {
+      counter: 0,
+      errors: [],
+      pseudo: null,
+      email: null,
+      comments: null
+  },
+    methods: {
+      subscribe : function (){
+        this.abonne++;
+        },
+      checkForm: function (e) {
+      this.errors = [];
+
+      if (!this.pseudo) {
+      this.errors.push("Vous devez remplir ce champ");
+      }
+      if (!this.email) {
+      this.errors.push('Adresse email vide');
+      } else if (!this.validEmail(this.email)) {
+          this.errors.push('Adresse email invalide');
+      }
+      if(!this.comments){
+        this.errors.push("Votre commentaire ne doit pas être vide");
+      }
+      if (!this.errors.length) {
+          return true;
+      }
+
+      e.preventDefault();
+      },
+      validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+      }
+       }
+      })
+  </script>  
+</main>
+       <footer class="bg-dark mt-5">
+        <div class="container-fluid padding"> 
+            <div class="row text-center">
+                <div class="col-md-4">
+                  <i class="fas fa-user-md mt-5"></i>
+                    <h6 class="pt-2 mt-4 text-warning">A propos</h6>
+                    <ul class="mr-5">
+                      <div><li class="d-none d-sm-inline-block">Rédacteur: Rakotonindrina Léone Sefatia</li></div>
+                      <div><li class="d-none d-sm-inline-block">Adresse: II 43ZJB Ambohidahy</li></div>
+                      <div><li class="d-none d-sm-inline-block"> Ankadindramamy</li></div>
+                      <div><li class="d-none d-sm-inline-block">Tel: 034 68 963 69 / Tel: 032 54 559 91</li></div>
+                      <div><li class="d-none d-sm-inline-block">e-mail : rakotonindrinasefatia@gmail.com</li></div>
+                  </ul> 
+                </div>
+                <div class="col-md-4">
+                  <i class="fas fa-calendar-alt mt-3"></i>
+                  <h6 class="pt-2 mt-4 text-warning">Réseaux sociaux</h6>
+                  <ul class="mr-5">
+                    <div><li class="d-none d-sm-inline-block"><img src="../image/Copie de téléchargement.jpg" width="25%" style="border-radius: 80%;"> Léone Sefatia</li></div>
+                    <div><li class="d-none d-sm-inline-block"><img src="../image/in.jpg" class="mt-2" width="25%" style="border-radius: 80%;">   leonesefatia</li></div>
+                    <div><li class="d-none d-sm-inline-block"><img src="../image/pint.jpg" class="mt-2" width="25%" style="border-radius: 80%;"> Léone Sefatia</li></div>
+                </ul> 
+                </div>
+                <div class="col-md-4">
+                  <i class="fas fa-folder mt-3"></i>
+                  <h6 class="pt-2 mt-4 text-warning">Aide</h6>
+                  <ol class="mr-5">
+                    <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Urgence</a></li></div>
+                    <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Alimentation saine</a></li></div>
+                    <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Régimes alimentaires </a></li></div>
+                    <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Astuces alimentaire</a></li></div>
+                    <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Qui sommes nous?</a></li></div>
+                  </ol> 
+              </div>
+        </div>
+        <div class="container-fluid">
+          <p class="text-center">&copy;Copyright Juillet 2021 by Léone Sefatia <small>source:www.google.com</small></p>
+        </div>
+      </div>
+      </footer>
+      
+</body>
+</html>

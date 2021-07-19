@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+  
+  <nav class="main-header navbar navbar-expand  bg-warning  fixed-top">
+    <div class=" container-fluid text-white  ">
+      <ul class="navbar-nav ml-auto mb-4">   
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="acc.html" class="nav-link btn btn-outline-light">Accueil</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="nutri.html" class="nav-link ">Nutrition</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="sport.html" class="nav-link ">Sport</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block ">
+          <a href="Conseils.html" class="nav-link ">Conseils pratique</a>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+  <div class="main-head bg-light fixed-top">
+    <input type="text" value="rechercher" class="col-md-4 input">
+    <button id="search" >search</button>
+  </div>
+  <main class="content-wrapper ">
+    <section class="content">
+        <section class="gallery-block cards-gallery">
+          <div class="container">
+            <div class="heading">
+              <h4 class="text-center mt-5">Une meilleure santé est essentielle au bonheur et au bien être.</h4>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-lg-4">
+                <div class="card border-0 transform-on-hover">
+                  <a class="lightbox" href="../image/exercise-female-fitness-foot-601177.jpg">
+                    <img src="../image/exercise-female-fitness-foot-601177.jpg" class="card-img-top">
+                  </a>
+                  <div class="card-body">
+                    <h5><a href="sport.html" style="color: black;">Sport</a></h5>
+                    <class="text-muted card-text"> La pratique régulière d'une activité physique peut contribuer à diminuer le risque plusieurs des maladies.
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4">
+                <div class="card border-0 transform-on-hover">
+                  <a class="lightbox" href="../image/brooke-lark-lcZ9NxhOSlo-unsplash.jpg">
+                    <img src="../image/brooke-lark-lcZ9NxhOSlo-unsplash.jpg" class="card-img-top">
+                  </a>
+                  <div class="card-body">
+                    <h5><a href="nutri.html" style="color: black;">Nutrition</a> </h5>
+                    <p class="text-muted card-text">L'alimentation doit couvrir les besoins liés aux dépenses d'énergie et apporter tous les nutriments dont l'organisme a besoin.
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4">
+                <div class="card border-0 transform-on-hover">
+                  <a class="lightbox" href="../image/sthe.jpg">
+                    <img src="../image/sthe.jpg" class="card-img-top">
+                  </a>
+                  <div class="card-body">
+                    <h5><a href="Conseils.html" style="color: black;">Santé et bien être</a></h5>
+                    <p class="text-muted card-text">La santé est un état complet bien-être physique, mental et social et ne consiste pas seulement en une absence de maladie ou d'infirmité.</p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </section>
+      </div>
+      <div class=" row container-fluid  ">
+        <div class="col-md-8 ">
+          <div>
+            <p class="text-muted">La nutrition joue un rôle préventif sur l'apparition ou le développement de certaines maladies telles que l'obésité, le diabète, l'hypertension artérielle ou encore les maladies cardio-vasculaires, lorsque celle-ci est trop riche, trop grasse, trop sucrée. Il est important d'essayer de maintenir un poids stable, ce qui démontre une alimentation équilibrée.              
+              L'alimentation est à adapter inviduellement car les besoins en calories varient selon les personnes, en fonction de leur age, leur poids, leur sexe(féminin ou masculin), de leur dépense énergétique et de leur activité physique effectuée.</p>
+              <img src="../image/frut.jpg"  width="48%">
+              <img src="../image/copie.jpg" width="48%">
+            <p class="text-muted">L'activité physique et le sport occupent une place de plus en plus importante dans la vie quotidienne. Mais quels sont les bienfaits de cette pratique en termes de santé et de bien-être ? combien en faire par semaine ? Il a été clairement démontré que la pratique régulière d'une activité physique peut contribuer à diminuer le risque des maladies cardio-vasculaires et diminuer le risque d'hypertension artérielle. Elle améliore l'endurance de votre organisme, augmente votre resistance et votre souplesse.</p>
+              <img src="../image/select.jpg"  width="48%">
+              <img src="../image/exer.jpg"  width="48%">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id="app" >
+            <div class="mb-3">Ce site peut vous aider pour tout votre santé. Dans ce site nous vous conseillons de manger des aliments saines, bien equilibré et nous vous montrons tous les bienfaits
+              du fruits, legumes ainsi que le bienfaits du sport.</div>
+            <button class="btn btn-outline-warning ml-5 mb-3">Inscrire</button>
+            <button class="btn btn-outline-warning ml-3 mb-3">Se connecter</button>
+            <div> Pour plus d'information ou si vous avez besoin d'aide n'hesitez pas à abonner pour récevoir d'autre article.</div>
+            <button class="btn btn-outline-danger mt-3" v-on:click="counter += 1"><img src="../image/instagram-3814047_960_720.png" class="mr-3" width="12%"  id="img" >Abonné</button>
+            <div class="text-center">
+              <span v-if="counter == 0" class="text-lg-2 text-muted">Aucun abonné</span>
+              <span v-if="counter == 1 " class="text-lg-2 text-muted">Une personne est abonnée</span>
+              <span v-if="counter >1 " class="text-lg-2 text-muted">{{counter}} personnes sont abonnées</span>
+            </div>
+         
+              <div class="text-center mt-4 mb-4">Envoyer un newletter</div>
+                <form method="post" action="#form" id="form">
+                    <div class="form-group">
+                      <p class="text-muted">Nouveautés, plus d'articles, vous êtes le premier à informer</p>
+                      <span>
+                        <input type="text" class="form-control" value="votrenomemail@gmail.com">
+                      </span>
+                    </div>
+                    <div class="form-group ">
+                      <button type="submit" name="valider" class="btn btn-warning">Envoyer</button>  
+                    </div>
+                </form>
+                <div class="mt-5">
+                  <h6 class="text-center">Suivez nous sur: </h6>
+                  <span><a href="#"><img src="../image/pint.jpg" width="20%" style="border-radius: 80%;"></a></span>
+                  <span><a href="#"></a><img src="../image/in.jpg" width="20%" style="border-radius: 80%;"></a></span>
+                  <span><a href="#"><img src="../image/Copie de téléchargement.jpg" width="20%" style="border-radius: 80%;"></a></span>
+                  <span><a href="#"><img src="../image/youtube.jpg" width="20%" style="border-radius: 80%;"></a></span>
+              </div>
+          </div> 
+        </div>       
+  </main>
+  <footer class="bg-dark mt-5">
+    <div class="container-fluid padding"> 
+        <div class="row text-center">
+            <div class="col-md-4">
+              <i class="fas fa-user-md mt-5"></i>
+                <h6 class="pt-2 mt-4 text-warning">A propos</h6>
+                <ul class="mr-5">
+                  <div><li class="d-none d-sm-inline-block">Rédacteur: Rakotonindrina Léone Sefatia</li></div>
+                  <div><li class="d-none d-sm-inline-block">Adresse: II 43ZJB Ambohidahy</li></div>
+                  <div><li class="d-none d-sm-inline-block"> Ankadindramamy</li></div>
+                  <div><li class="d-none d-sm-inline-block">Tel: 034 68 963 69 / Tel: 032 54 559 91</li></div>
+                  <div><li class="d-none d-sm-inline-block">e-mail : rakotonindrinasefatia@gmail.com</li></div>
+              </ul> 
+            </div>
+            <div class="col-md-4">
+              <i class="fas fa-calendar-alt mt-3"></i>
+              <h6 class="pt-2 mt-4 text-warning">Réseaux sociaux</h6>
+              <ul class="mr-5">
+                <div><li class="d-none d-sm-inline-block"><img src="../image/Copie de téléchargement.jpg" width="23%" style="border-radius: 80%;"> Léone Sefatia</li></div>
+                <div><li class="d-none d-sm-inline-block"><img src="../image/in.jpg" class="mt-2" width="25%" style="border-radius: 80%;">   leonesefatia</li></div>
+                <div><li class="d-none d-sm-inline-block"><img src="../image/pint.jpg" class="mt-2" width="25%" style="border-radius: 80%;"> Léone Sefatia</li></div>
+            </ul> 
+            </div>
+            <div class="col-md-4">
+              <i class="fas fa-folder mt-3"></i>
+              <h6 class="pt-2 mt-4 text-warning">Aide</h6>
+              <ol class="mr-5">
+                  <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Urgence</a></li></div>
+                  <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Nutrition et alimentation saine</a></li></div>
+                  <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Régime alimentaires pour les sportifs </a></li></div>
+                  <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Pourquoi faire du sport?</a></li></div>
+                  <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Astuces quotidiennes</a></li></div>
+                  <div><li class="d-none d-sm-inline-block"><a href="#" style="color: white;">Qui sommes nous?</a></li></div>
+                </ol> 
+          </div>
+    </div>
+    <div class="container-fluid">
+      <p class="text-center">&copy;Copyright Juillet 2021 by Léone Sefatia  <small>source:www.google.com</small></p>
+    </div>
+  </div>
+  </footer>
+      <script>
+        var app= new Vue({
+          el:"#app",
+          data: function() {
+            return {
+              counter : 0 
+           }
+          },
+
+           methods: {
+            subscribe : function (){
+               this.abonne++;
+             }
+           }
+        })
+      </script>
+</body>
+</html>
